@@ -8,7 +8,7 @@ const getDataFromApi = (requestUrl, res) => {
       return res.status(500).send({
         type: 'error',
         message: error.message,
-        stack: error.stack,
+        stack: error.stack
       });
     } else {
       return res.status(200).send(body);
@@ -21,6 +21,10 @@ const app = express();
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
+});
+
+app.get('/', (req, res) => {
+  return res.status(200).send({ type: 'success', message: 'It works!' });
 });
 
 app.get('/api/chapters/', (req, res) => {
