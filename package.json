@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node proxy.js",
+    "deploy": " npm install && heroku create && git push heroku master",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
